@@ -1,0 +1,33 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #f4f4f4;
+  height: 80px;
+}
+.navbar-logo {
+  display: flex;
+  flex: 1;
+  margin: 16px;
+  border: 1px solid aqua;
+}
+.navbar-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 3;
+  border: 1px solid purple;
+}
+.navbar-menu-items {
+  display: flex;
+
+  justify-content: space-around;
+}
+
+.navbar-search {
+  display: flex;
+  flex: 1;
+  margin: 16px;
+  justify-content: flex-end;
+  border: 1px solid tan;
+}

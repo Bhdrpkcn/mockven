@@ -1,0 +1,33 @@
+.App {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  overflow: hidden;
+  background-color: #f4f4f4;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.ant-btn-primary {
+  background-color: #ef4444;
+}
+
+.ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover {
+  background: linear-gradient(20deg, #fa0a66, #ef4444 80%);
+  color: #fff;
+}
+
+.filter-container::-webkit-scrollbar {
+  display: none;
+}
+
+.ant-btn-default {
+  font-size: 14px;
+}
+.ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+  color: #ccdde1;
+  font-size: 13px;
+  border-width: 1.5px;
+  border-color: #ff898d;
+}
