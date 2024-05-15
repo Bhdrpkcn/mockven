@@ -103,6 +103,49 @@
   animation: scaleUpFadeIn 1s ease-in;
 }
 
+/* Banner Message */
+
+.banner-message {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 12;
+  top: 200px;
+  left: 40px;
+  width: 75vw;
+}
+
+.banner-message-title {
+  font-size: 54px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  animation: scaleUpFadeIn 2s ease-in;
+}
+
+.banner-message-body {
+  margin: 24px 0px;
+  width: 50vw;
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 3px;
+  color: rgba(0, 0, 0, 0.4);
+  animation: moveRightFadeIn 3s ease-in;
+}
+
+.banner-message-link {
+  margin: 24px 0px;
+  width: 50vw;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+  animation: moveRightFadeIn 4s ease-in;
+}
+
+/* Media controls and animations */
+
 @media (max-width: 1024px) {
   .motion-object-group {
     right: -100px;

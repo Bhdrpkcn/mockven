@@ -47,7 +47,7 @@ const WelcomeBanner = () => {
     positionRef.current.vx += dx;
     positionRef.current.vy += dy;
 
-    positionRef.current.vx *= 0.5; 
+    positionRef.current.vx *= 0.5;
     positionRef.current.vy *= 0.5;
 
     positionRef.current.x += positionRef.current.vx;
@@ -77,6 +77,15 @@ const WelcomeBanner = () => {
 
   return (
     <div className="welcome-banner" ref={bannerRef}>
+      <div className="banner-message">
+        <div className="banner-message-title">We bring the Magic.</div>
+        <div className="banner-message-body">
+          This is a cloneApp for a software company that provides 360-degree services from
+          strategy to development to build delightfull software solutions that
+          make their customers succesful.
+        </div>
+        <div className="banner-message-link">Discover More</div>
+      </div>
       <div className="motion">
         <div className="motion-object-group">
           <img
