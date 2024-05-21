@@ -1,0 +1,52 @@
+.flow-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* FIX THE OVERFLOWING BORDER via probably outer margin value*/
+
+.container-subText {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 16px 0px;
+  font-weight: 500;
+  width: 80%;
+  letter-spacing: 4px;
+  text-align: center;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 1);
+  z-index: 1;
+}
+
+.subText-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.subText-content-data {
+  font-size: 64px;
+  letter-spacing: 12px;
+}
+
+.subText-content-title {
+  font-size: 16px;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.container-sectionImage {
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 100vw;
+    position: relative;
+    top: -430px;
+    z-index: 0;
+    margin-bottom: -430px;
+  }
+}
