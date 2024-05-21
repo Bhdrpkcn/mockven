@@ -262,7 +262,7 @@ export const SUCCESS_DATAFLOW = {
   sectionTitle: "SUCCESS STORIES",
   sectionMainText:
     "We are proud to celebrate amazing accomplishments with our clients",
-  2: [
+  successCards: [
     {
       successId: "1001",
       successName: "MAC+",
