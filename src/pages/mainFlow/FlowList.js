@@ -1,39 +1,37 @@
-import React from "react";
-import {
-  CLIENT_DATAFLOW,
-  CONTACT_DATAFLOW,
-  EXPERIENCE_DATAFLOW,
-  INDUSTRIES_DATAFLOW,
-  PRODUCT_DATAFLOW,
-  SERVICE_DATAFLOW,
-  SUCCESS_DATAFLOW,
-  TESTIMONIAL_DATAFLOW,
-} from "../../constants/mainFlowData";
-
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import FlowContainer from "./FlowContainer";
 import FlowAnimation from "./FlowAnimation";
+import fetchData from "../../store/api/fetchApi";
 
 const FlowList = () => {
-  const dataFlows = [
-    SERVICE_DATAFLOW,
-    EXPERIENCE_DATAFLOW,
-    PRODUCT_DATAFLOW,
-    TESTIMONIAL_DATAFLOW,
-    CLIENT_DATAFLOW,
-    INDUSTRIES_DATAFLOW,
-    SUCCESS_DATAFLOW,
-    // CONTACT_DATAFLOW,
-  ];
-  return (
-    <div>
-      {dataFlows.map((dataFlow, index) => (
+  const dispatch = useDispatch();
+  const { data, loading, error } = useSelector((state) => state.api);
+
+  useEffect(() => {
+    dispatch(fetchData());
+  }, [dispatch]);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+
+  const renderFlowList = () => {
+    return data.map((dataFlow, index) => {
+      const nextDataFlow = data[index + 1];
+
+      return (
         <React.Fragment key={dataFlow.sectionId}>
           <FlowContainer item={dataFlow} />
-          {dataFlow === PRODUCT_DATAFLOW && <FlowAnimation />}
+          {dataFlow.sectionName === "DATA_PRODUCT" &&
+            nextDataFlow?.sectionName === "DATA_TESTIMONIAL" && (
+              <FlowAnimation />
+            )}
         </React.Fragment>
-      ))}
-    </div>
-  );
+      );
+    });
+  };
+
+  return <div>{renderFlowList()}</div>;
 };
 
 export default FlowList;

@@ -1,0 +1,15 @@
+.flow-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  overflow: hidden;
+  padding: calc(40px + 8vw) 0;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+
+  &.has-image {
+    filter: brightness(0.85);
+  }
+}

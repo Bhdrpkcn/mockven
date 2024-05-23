@@ -30,15 +30,15 @@ export const FlowSlider = ({ item }) => {
           <div className="quote-card-container">
             {item.map((quote, index) => (
               <div
-                key={quote.quotesId}
+                key={quote.id}
                 className={`quote-card ${
                   index === currentIndex ? "active" : "inactive"
                 }`}
               >
-                <p className="quote-text">"{quote.quotesText}"</p>
-                <p className="quote-commenter">{quote.quotesCommenter}</p>
+                <p className="quote-text">"{quote.text}"</p>
+                <p className="quote-commenter">{quote.commenter}</p>
                 <p className="quote-title">
-                  {quote.quotesCommenterTitle}, {quote.quotesCommenterCompany}
+                  {quote.commenterTitle}, {quote.company}
                 </p>
               </div>
             ))}
@@ -49,13 +49,13 @@ export const FlowSlider = ({ item }) => {
           <div className="avatar-container">
             {item.map((quote, index) => (
               <div
-                key={quote.quotesId}
+                key={quote.id}
                 className={`avatar ${
                   index === currentIndex ? "active-avatar" : "inactive-avatar"
                 }`}
                 onClick={() => handleAvatarClick(index)}
               >
-                {quote.quotesCommenter[0]}
+                {quote.commenter[0]}
               </div>
             ))}
           </div>

@@ -1,21 +1,25 @@
 import React from "react";
-import "./flowContainer.css";
+import "./flowContainer.scss";
 import { FlowHeader } from "../../components/FlowHeader";
-import { FlowSlider } from "../../components/FlowSlider";
 import { FlowCard } from "../../components/FlowCard";
 
 const FlowContainer = ({ item }) => {
-  return (
-    <div className="flow-container" key={item.sectionId}>
-      <FlowHeader item={item} />
-      <FlowSlider item={item.quotes} />
-      <FlowCard item={item} />
+  const flowContainerClass = item.sectionImage
+    ? "flow-container has-image"
+    : "flow-container";
 
-      {item.sectionImage && (
-        <div className="container-sectionImage">
-          <img src={item.sectionImage} alt={item.sectionTitle} />
-        </div>
-      )}
+  const flowContainerStyle = {
+    backgroundImage: `url(${item.sectionImage})`,
+  };
+
+  return (
+    <div
+      className={flowContainerClass}
+      style={flowContainerStyle}
+      key={item.sectionId}
+    >
+      <FlowHeader item={item} />
+      <FlowCard item={item} />
     </div>
   );
 };
