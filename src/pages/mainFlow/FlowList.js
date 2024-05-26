@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import FlowContainer from "./FlowContainer";
 import FlowAnimation from "./FlowAnimation";
 import fetchData from "../../store/api/fetchApi";
+import ScrollTracker from "../../assets/ScrollTracker";
 
 const FlowList = () => {
   const dispatch = useDispatch();
@@ -31,7 +32,12 @@ const FlowList = () => {
     });
   };
 
-  return <div>{renderFlowList()}</div>;
+  return (
+    <div>
+      <ScrollTracker />
+      {renderFlowList()}
+    </div>
+  );
 };
 
 export default FlowList;

@@ -1,4 +1,6 @@
 import React from "react";
+import { HiArrowLongRight } from "react-icons/hi2";
+
 import "./flowCard.scss";
 
 export const FlowCard = ({ item }) => {
@@ -37,7 +39,7 @@ export const FlowCard = ({ item }) => {
 
               {item.cardButton && (
                 <a className="card-button" href={card.link}>
-                  -arrowIcon-
+                  <HiArrowLongRight />
                 </a>
               )}
             </div>

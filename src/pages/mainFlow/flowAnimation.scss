@@ -1,0 +1,38 @@
+.flow-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: -200px;
+}
+
+.animation-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(240, 0, 0);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  z-index: 0;
+
+  font-size: 40px;
+  font-weight: bolder;
+  color: white;
+}
+
+.animation-red-circle {
+  position: absolute;
+  width: var(--circle-size);
+  height: var(--circle-size);
+  max-height: 1500px;
+  background-color: rgb(240, 0, 0);
+  border-radius: 50%;
+
+  z-index: -5;
+  text-align: center;
+  align-content: center;
+  color: white;
+  font-size: 32px;
+  transition: 0.2s ease-in-out;
+}

@@ -4,12 +4,16 @@
   width: 100%;
   align-items: center;
   overflow: hidden;
-  padding: calc(40px + 8vw) 0;
+  margin: 60px 0px;
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
+  z-index: 2;
 
   &.has-image {
     filter: brightness(0.85);
+    padding: 10vw 0;
+    min-height: 340px;
+    z-index: 2;
   }
 }

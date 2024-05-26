@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import "./flowSlider.css";
+import { IoPerson } from "react-icons/io5";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+
+import "./flowSlider.scss";
 
 export const FlowSlider = ({ item }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -23,29 +26,36 @@ export const FlowSlider = ({ item }) => {
   return (
     <>
       {item && (
-        <div className="slider-container">
-          <button onClick={handlePrevClick} className="arrow left-arrow">
-            &lt;
-          </button>
-          <div className="quote-card-container">
-            {item.map((quote, index) => (
-              <div
-                key={quote.id}
-                className={`quote-card ${
-                  index === currentIndex ? "active" : "inactive"
-                }`}
-              >
-                <p className="quote-text">"{quote.text}"</p>
-                <p className="quote-commenter">{quote.commenter}</p>
-                <p className="quote-title">
-                  {quote.commenterTitle}, {quote.company}
-                </p>
-              </div>
-            ))}
+        <div className="slider">
+          <div className="slider-container">
+            <button onClick={handlePrevClick} className="arrow left-arrow">
+              <FaAngleLeft />
+            </button>
+
+            <div className="quote-card-container">
+              {item.map((quote, index) => (
+                <div
+                  key={quote.id}
+                  className={`quote-card ${
+                    index === currentIndex ? "active" : "inactive"
+                  }`}
+                >
+                  <div className="quote-text">"{quote.text}"</div>
+                  <div>
+                    <div className="quote-commenter">{quote.commenter}</div>
+                    <div className="quote-title">
+                      {quote.commenterTitle}, {quote.company}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <button onClick={handleNextClick} className="arrow right-arrow">
+              <FaAngleRight />
+            </button>
           </div>
-          <button onClick={handleNextClick} className="arrow right-arrow">
-            &gt;
-          </button>
+
           <div className="avatar-container">
             {item.map((quote, index) => (
               <div
@@ -55,7 +65,7 @@ export const FlowSlider = ({ item }) => {
                 }`}
                 onClick={() => handleAvatarClick(index)}
               >
-                {quote.commenter[0]}
+                <IoPerson />
               </div>
             ))}
           </div>

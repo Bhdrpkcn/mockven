@@ -120,6 +120,7 @@ export const DATAFLOW = [
     sectionMainText: "What our clients say",
     sectionSubText: null,
     cardType: null,
+    sectionImage: true,
     quotes: [
       {
         id: "1001",

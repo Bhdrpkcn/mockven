@@ -1,29 +1,23 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { HiArrowLongDown } from "react-icons/hi2";
+import "./flowAnimation.scss";
 
 const FlowAnimation = () => {
+  const scrollPercentage = useSelector(
+    (state) => state.animation.scrollPercentage
+  );
+  const circleSize = Math.min(150, -45 + scrollPercentage) * 10;
+
+  console.log("circleSize:", circleSize);
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignContent: "center",
-        width: "100vw",
-        margin: "3rem 0rem",
-      }}
-    >
-      <div
-        style={{
-          width: "200px",
-          height: "200px",
-          backgroundColor: "red",
-          borderRadius: "100px",
-          alignContent: "center",
-          textAlign: "center",
-          color: "white",
-        }}
-      >
-        <p>im red circle </p>
-        <p>(i'll be bigger later on)</p>
+    <div className="flow-page">
+      <div className="animation-container">
+        <HiArrowLongDown />
+        <div
+          className="animation-red-circle"
+          style={{ "--circle-size": `${circleSize}vw` }}
+        />
       </div>
     </div>
   );

@@ -1,0 +1,22 @@
+import { createSlice } from "@reduxjs/toolkit";
+
+const animationSlice = createSlice({
+  name: "animation",
+  initialState: {
+    scrollPercentage: 0,
+    sectionStage: "",
+  },
+  reducers: {
+    setScrollPercentage: (state, action) => {
+      state.scrollPercentage = action.payload;
+      console.log(state.scrollPercentage);
+    },
+    setSectionStage: (state, action) => {
+      state.sectionStage = action.payload;
+    },
+  },
+});
+
+export const { setScrollPercentage, setSectionStage } = animationSlice.actions;
+
+export default animationSlice.reducer;

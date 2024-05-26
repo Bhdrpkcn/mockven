@@ -1,0 +1,100 @@
+.slider {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+
+  min-height: 400px;
+}
+.slider-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  display: flex;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 5rem;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.quote-card-container {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  overflow: hidden;
+  color: white;
+}
+
+.quote-card {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+
+  text-align: center;
+  gap: 24px;
+  width: 80%;
+
+  transition: transform 0.5s ease;
+}
+
+.quote-card.active {
+  display: flex;
+  transform: translateX(0);
+}
+
+.quote-card.inactive {
+  transform: translateX(100%);
+}
+
+.quote-text {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.quote-commenter {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.quote-title {
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+.avatar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 40px;
+  margin: 0 8px;
+  background-color: white;
+  color: rgb(200, 200, 200);
+  cursor: pointer;
+  transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+}
+
+.avatar.active-avatar {
+  width: 90px;
+  height: 90px;
+}
