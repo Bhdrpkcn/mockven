@@ -158,6 +158,7 @@ export const DATAFLOW = [
     sectionTitle: "OUR CLIENTS",
     sectionMainText: "We've products that are shaping your world",
     sectionSubText: null,
+    sectionImage: true,
     cardType: "c",
     cards: [
       {
