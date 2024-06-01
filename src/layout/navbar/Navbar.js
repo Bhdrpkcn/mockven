@@ -1,19 +1,184 @@
-import React from "react";
-import "./style.css";
+import React, { useRef, useState } from "react";
+import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { IoCloseOutline } from "react-icons/io5";
+import {
+  FaTwitter,
+  FaInstagram,
+  FaFacebookF,
+  FaLinkedin,
+} from "react-icons/fa";
+
+import "./style.scss";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Typography,
+} from "@mui/material";
 
 const Navbar = () => {
+  const headRef = useRef();
+  const [expanded, setExpanded] = useState(false);
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
+
+  const showMenuBar = () => {
+    headRef.current.classList.toggle("responsiveHeader");
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeMenuBar = () => {
+    headRef.current.classList.remove("responsiveHeader");
+    document.body.style.overflow = "auto";
+  };
+
+  const navbarMenuItems = [
+    {
+      name: "Solutions & Services",
+      extraItems: [
+        "Software Development",
+        "Mobile App Development",
+        "Web Development",
+        "Studio",
+        "QA & DevOps",
+        "Strategy & Consulting",
+        "Support & Maintenance",
+      ],
+      link: "/solutions",
+    },
+    {
+      name: "Experiences",
+      extraItems: ["Clients", "Industries", "Success Stories"],
+      link: "/experiences",
+    },
+    {
+      name: "Products",
+      extraItems: ["Momentum Suite", "MobKit (Mobile SDK)", "Digital Wallet"],
+      link: "/products",
+    },
+    {
+      name: "Company",
+      extraItems: ["Our Story", "Contact Us"],
+      link: "/company",
+    },
+    {
+      name: "Blog",
+      extraItems: null,
+      link: "/blog",
+    },
+    {
+      name: "Careers",
+      extraItems: null,
+      link: "/careers",
+    },
+  ];
+
   return (
     <div className="navbar">
-      <div className="navbar-logo">mockVEN</div>
-      <div className="navbar-menu">
-        <div className="navbar-menu-items">Solutions</div>
-        <div className="navbar-menu-items">Experiences</div>
-        <div className="navbar-menu-items">Products</div>
-        <div className="navbar-menu-items">Company</div>
-        <div className="navbar-menu-items">Blog</div>
-        <div className="navbar-menu-items">Careers</div>
+      <div className="navbar-logo">
+        <img
+          src="https://mobven.com/wp-content/uploads/2022/05/mobven-logo-1.svg"
+          alt="mockven_logo"
+          onClick={() => (window.location.href = "/")}
+        />
       </div>
-      <div className="navbar-search">Search</div>
+      <div className="navbar-items">
+        {navbarMenuItems.map((navbarMenuItem) => (
+          <div className="navbar-item" key={navbarMenuItem.name}>
+            {navbarMenuItem.name}
+          </div>
+        ))}
+      </div>
+
+      <div className="navbar-open" ref={headRef}>
+        <div className="navbar-open-left">
+          <div className="navbar-open-left-logo">
+            <div className="logo-name">Mobven</div>
+            <div className="logo-motto">Rediscover the power of digital</div>
+          </div>
+          <div className="navbar-menu-accordion-container">
+            {navbarMenuItems.map((navbarMenuItem, index) => (
+              <Accordion
+                className="navbar-menu-accordion"
+                key={index}
+                expanded={expanded === index}
+                onChange={handleChange(index)}
+                sx={{
+                  bgcolor: "#222733",
+                }}
+              >
+                <AccordionSummary
+                  aria-controls={`panel${index}bh-content`}
+                  id={`panel${index}bh-header`}
+                >
+                  <Typography
+                    sx={{
+                      width: "100%",
+                      color: "rgba(255, 255, 255, 0.85)",
+                      fontSize: "24px",
+                      fontWeight: "600",
+                      letterSpacing: "2px",
+                    }}
+                  >
+                    {navbarMenuItem.name}
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails
+                  sx={{
+                    color: "white",
+                  }}
+                >
+                  {navbarMenuItem.extraItems &&
+                    navbarMenuItem.extraItems.map((item, i) => (
+                      <Typography
+                        sx={{
+                          width: "100%",
+                          cursor: "pointer",
+                          flexShrink: 1,
+                          color: "rgba(255, 255, 255, 0.7)",
+                          fontSize: "18px",
+                          padding: "8px",
+                          fontWeight: "400",
+                          letterSpacing: "2px",
+                        }}
+                        key={i}
+                        onClick={() =>
+                          (window.location.href = `${navbarMenuItem.link}`)
+                        }
+                      >
+                        {item}
+                      </Typography>
+                    ))}
+                </AccordionDetails>
+              </Accordion>
+            ))}
+          </div>
+          <div className="navbar-open-left-footer">
+            <FaFacebookF />
+            <FaTwitter />
+            <FaInstagram />
+            <FaLinkedin />
+          </div>
+        </div>
+
+        <div className="navbar-open-right">
+          <div className="navbar-close-button" onClick={closeMenuBar}>
+            Close
+            <IoCloseOutline className="navbar-close-button-icon" />
+          </div>
+        </div>
+      </div>
+
+      <div className="navbar-buttons">
+        <HiOutlineMagnifyingGlass />
+        <RxHamburgerMenu
+          className="navbar-buttons-menu"
+          onClick={showMenuBar}
+        />
+      </div>
     </div>
   );
 };

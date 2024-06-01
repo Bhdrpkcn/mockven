@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import FlowContainer from "./FlowContainer";
 import FlowAnimation from "./FlowAnimation";
 import fetchData from "../../store/api/fetchApi";
-import ScrollTracker from "../../assets/ScrollTracker";
+import ScrollTracker from "../../utils/ScrollTracker";
 
 const FlowList = () => {
   const dispatch = useDispatch();

@@ -7,7 +7,7 @@ const FlowAnimation = () => {
   const scrollPercentage = useSelector(
     (state) => state.animation.scrollPercentage
   );
-  const circleSize = Math.min(150, -45 + scrollPercentage) * 10;
+  const circleSize = (-40 + scrollPercentage) * 10;
 
   console.log("circleSize:", circleSize);
   return (

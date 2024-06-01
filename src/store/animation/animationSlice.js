@@ -13,6 +13,7 @@ const animationSlice = createSlice({
     },
     setSectionStage: (state, action) => {
       state.sectionStage = action.payload;
+      console.log(state.sectionStage);
     },
   },
 });
