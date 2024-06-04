@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTheme } from "../../utils/ThemeContext";
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -20,6 +20,47 @@ import {
 import "./style.scss";
 import SwitchButton from "../../components/SwitchButton";
 
+const navbarMenuItems = [
+  {
+    name: "Solutions & Services",
+    extraItems: [
+      "Software Development",
+      "Mobile App Development",
+      "Web Development",
+      "Studio",
+      "QA & DevOps",
+      "Strategy & Consulting",
+      "Support & Maintenance",
+    ],
+    link: "/solutions",
+  },
+  {
+    name: "Experiences",
+    extraItems: ["Clients", "Industries", "Success Stories"],
+    link: "/experiences",
+  },
+  {
+    name: "Products",
+    extraItems: ["Momentum Suite", "MobKit (Mobile SDK)", "Digital Wallet"],
+    link: "/products",
+  },
+  {
+    name: "Company",
+    extraItems: ["Our Story", "Contact Us"],
+    link: "/company",
+  },
+  {
+    name: "Blog",
+    extraItems: null,
+    link: "/blog",
+  },
+  {
+    name: "Careers",
+    extraItems: null,
+    link: "/careers",
+  },
+];
+
 const Navbar = () => {
   const headRef = useRef();
   const [expanded, setExpanded] = useState(false);
@@ -39,47 +80,6 @@ const Navbar = () => {
     document.body.style.overflow = "auto";
   };
 
-  const navbarMenuItems = [
-    {
-      name: "Solutions & Services",
-      extraItems: [
-        "Software Development",
-        "Mobile App Development",
-        "Web Development",
-        "Studio",
-        "QA & DevOps",
-        "Strategy & Consulting",
-        "Support & Maintenance",
-      ],
-      link: "/solutions",
-    },
-    {
-      name: "Experiences",
-      extraItems: ["Clients", "Industries", "Success Stories"],
-      link: "/experiences",
-    },
-    {
-      name: "Products",
-      extraItems: ["Momentum Suite", "MobKit (Mobile SDK)", "Digital Wallet"],
-      link: "/products",
-    },
-    {
-      name: "Company",
-      extraItems: ["Our Story", "Contact Us"],
-      link: "/company",
-    },
-    {
-      name: "Blog",
-      extraItems: null,
-      link: "/blog",
-    },
-    {
-      name: "Careers",
-      extraItems: null,
-      link: "/careers",
-    },
-  ];
-  console.log(theme);
   return (
     <div className={`navbar ${theme}`}>
       <div className="navbar-logo">

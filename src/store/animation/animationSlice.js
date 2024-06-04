@@ -9,11 +9,9 @@ const animationSlice = createSlice({
   reducers: {
     setScrollPercentage: (state, action) => {
       state.scrollPercentage = action.payload;
-      console.log(state.scrollPercentage);
     },
     setSectionStage: (state, action) => {
       state.sectionStage = action.payload;
-      console.log(state.sectionStage);
     },
   },
 });

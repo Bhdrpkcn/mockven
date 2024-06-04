@@ -73,19 +73,18 @@
   top: 0;
   left: 0;
   height: 100%;
+
   width: 100%;
   gap: 1.5rem;
 
   transition: transform 0.6s ease-in-out;
   transform: translateY(-100vh);
-
+  &.responsiveHeader {
+    transform: translateY(0);
+  }
   .dark & {
     background-color: var(--background-color-light);
   }
-}
-
-.navbar-open.responsiveHeader {
-  transform: translateY(0);
 }
 
 .navbar-open-left {
