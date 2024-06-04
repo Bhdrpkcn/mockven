@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import "./welcomeBanner.css";
+import "./welcomeBanner.scss";
 
 const WelcomeBanner = () => {
   const [mouseX, setMouseX] = useState(0);
@@ -80,9 +80,9 @@ const WelcomeBanner = () => {
       <div className="banner-message">
         <div className="banner-message-title">We bring the Magic.</div>
         <div className="banner-message-body">
-          This is a cloneApp for a software company that provides 360-degree services from
-          strategy to development to build delightfull software solutions that
-          make their customers succesful.
+          This is a cloneApp for a software company that provides 360-degree
+          services from strategy to development to build delightfull software
+          solutions that make their customers succesful.
         </div>
         <div className="banner-message-link">Discover More</div>
       </div>

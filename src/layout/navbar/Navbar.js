@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { useTheme } from "../../utils/ThemeContext";
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseOutline } from "react-icons/io5";
@@ -9,7 +10,6 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 
-import "./style.scss";
 import {
   Accordion,
   AccordionDetails,
@@ -17,9 +17,13 @@ import {
   Typography,
 } from "@mui/material";
 
+import "./style.scss";
+import SwitchButton from "../../components/SwitchButton";
+
 const Navbar = () => {
   const headRef = useRef();
   const [expanded, setExpanded] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -75,9 +79,9 @@ const Navbar = () => {
       link: "/careers",
     },
   ];
-
+  console.log(theme);
   return (
-    <div className="navbar">
+    <div className={`navbar ${theme}`}>
       <div className="navbar-logo">
         <img
           src="https://mobven.com/wp-content/uploads/2022/05/mobven-logo-1.svg"
@@ -112,7 +116,7 @@ const Navbar = () => {
                 expanded={expanded === index}
                 onChange={handleChange(index)}
                 sx={{
-                  bgcolor: "#222733",
+                  bgcolor: theme === "dark" ? "#f4f4f4" : "#222733",
                 }}
               >
                 <AccordionSummary
@@ -122,7 +126,7 @@ const Navbar = () => {
                   <Typography
                     sx={{
                       width: "100%",
-                      color: "rgba(255, 255, 255, 0.85)",
+                      color: theme === "dark" ? "#222733" : "#dfdfdf",
                       fontSize: "24px",
                       fontWeight: "600",
                       letterSpacing: "2px",
@@ -143,7 +147,7 @@ const Navbar = () => {
                           width: "100%",
                           cursor: "pointer",
                           flexShrink: 1,
-                          color: "rgba(255, 255, 255, 0.7)",
+                          color: theme === "dark" ? "#222733" : "#dfdfdf",
                           fontSize: "18px",
                           padding: "8px",
                           fontWeight: "400",
@@ -178,6 +182,8 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-buttons">
+        <SwitchButton onClick={toggleTheme} theme={theme} />
+
         <HiOutlineMagnifyingGlass />
         <RxHamburgerMenu
           className="navbar-buttons-menu"

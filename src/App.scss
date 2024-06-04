@@ -1,13 +1,26 @@
+:root {
+  --background-color-light: #f4f4f4;
+  --background-color-dark: #222733;
+  --text-color-light: #303030;
+  --text-color-dark: #cecece;
+}
+
 .App {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   overflow: hidden;
-  background-color: #f4f4f4;
+  background-color: var(--background-color-light);
+  transition: background-color 0.3s;
+  &.dark {
+    background-color: var(--background-color-dark);
+  }
 }
 
 * {
   font-family: "Poppins", sans-serif;
 }
+
+/* look below if needed ! */
 
 .ant-btn-primary {
   background-color: #ef4444;
