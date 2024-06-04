@@ -96,7 +96,12 @@ const Navbar = () => {
       <div className="navbar-open" ref={headRef}>
         <div className="navbar-open-left">
           <div className="navbar-open-left-logo">
-            <div className="logo-name">Mobven</div>
+            <div
+              onClick={() => (window.location.href = "/")}
+              className="logo-name"
+            >
+              Mobven
+            </div>
             <div className="logo-motto">Rediscover the power of digital</div>
           </div>
           <div className="navbar-menu-accordion-container">
