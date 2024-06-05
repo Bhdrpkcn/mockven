@@ -283,14 +283,4 @@ export const DATAFLOW = [
       },
     ],
   },
-  {
-    sectionId: "108",
-    sectionName: "DATA_CONTACT",
-    sectionTitle: "LET'S CONNECT",
-    sectionMainText: "We'd Love to Talk",
-    sectionSubText:
-      "Mobven provides more than simply staffing; when we work as part of your team, we give actual project management and technical experience. We won't simply be a helping hand—we'll help you plan your strategy, implement best practices to ensure long-term success, and assist your team advance. To schedule a complimentary session to discuss your concept, project, or goals, please contact us.",
-    sectionImage:
-      "https://mobven.com/wp-content/uploads/2022/06/DSCF9972-scaled.jpg",
-  },
 ];

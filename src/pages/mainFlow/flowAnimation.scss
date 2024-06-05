@@ -2,15 +2,15 @@
   display: flex;
   flex-direction: column;
 }
-
+// FIX height and margin values for media device stuff.. also the NAME !
 .ter {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100vw;
-  height: 200vh;
-  margin-top: -100vh;
-  margin-bottom: -100vh;
+  height: 220vh;
+  margin-top: -110vh;
+  margin-bottom: -110vh;
   position: relative;
   overflow: hidden;
 }
@@ -35,7 +35,7 @@
   position: absolute;
   width: var(--circle-size);
   height: var(--circle-size);
-  max-height: 2400px;
+
   background-color: rgb(240, 0, 0);
   border-radius: 50%;
 
