@@ -4,6 +4,7 @@ import Body from "./layout/body/Body";
 import Navbar from "./layout/navbar/Navbar";
 import { ThemeProvider, useTheme } from "./utils/ThemeContext";
 import Footer from "./layout/footer/Footer";
+import BackToTop from "./utils/BackToTop";
 
 function AppContent() {
   const { theme } = useTheme();
@@ -11,6 +12,7 @@ function AppContent() {
   return (
     <div className={`App ${theme}`}>
       <Navbar />
+      <BackToTop />
       <Body />
       <Footer />
     </div>
