@@ -9,12 +9,12 @@ import { FaArrowUpLong } from "react-icons/fa6";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 
 function BackToTop(props) {
-  const { children, window } = props;
+  const { window } = props;
 
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
     disableHysteresis: true,
-    threshold: 100,
+    threshold: 1000,
   });
 
   const handleClick = (event) => {
@@ -49,7 +49,6 @@ function BackToTop(props) {
 }
 
 BackToTop.propTypes = {
-  children: PropTypes.element.isRequired,
   window: PropTypes.func,
 };
 

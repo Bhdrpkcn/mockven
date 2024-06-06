@@ -25,6 +25,8 @@ const ScrollTracker = () => {
     const sections = document.querySelectorAll(".flow-container");
     sections.forEach((section) => {
       const rect = section.getBoundingClientRect();
+
+      console.log(windowHeight);
       if (rect.top <= windowHeight / 2 && rect.bottom >= windowHeight / 2) {
         dispatch(setSectionStage(section.id));
       }

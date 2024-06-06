@@ -31,11 +31,11 @@ const FlowAnimation = () => {
   const scrollPercentage = useSelector(
     (state) => state.animation.scrollPercentage
   );
-  const circleSize = (-40 + scrollPercentage) * 10;
+  const circleSize = (-42 + scrollPercentage) * 10;
 
   return (
     <div className="flow-page" ref={inputRef} id="flow-page">
-      <div className="ter">
+      <div className="animation-container-position">
         <div className="animation-container">
           <HiArrowLongDown />
           <div
