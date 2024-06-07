@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import {
   setScrollPercentage,
@@ -16,9 +16,6 @@ const ScrollTracker = () => {
     const scrollPercentage = Math.trunc(
       (scrollY / (documentHeight - windowHeight)) * 100
     );
-    // console.log(scrollY, "/", documentHeight, "-", windowHeight, "*100");
-    // console.log(scrollY, "/", documentHeight - windowHeight);
-    // console.log("scroll Percentage =", scrollPercentage);
 
     dispatch(setScrollPercentage(scrollPercentage));
 
@@ -26,7 +23,6 @@ const ScrollTracker = () => {
     sections.forEach((section) => {
       const rect = section.getBoundingClientRect();
 
-      console.log(windowHeight);
       if (rect.top <= windowHeight / 2 && rect.bottom >= windowHeight / 2) {
         dispatch(setSectionStage(section.id));
       }
