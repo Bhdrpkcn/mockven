@@ -8,9 +8,9 @@
   align-items: center;
   justify-content: center;
   width: 100vw;
-  height: 220vh;
-  margin-top: -110vh;
-  margin-bottom: -110vh;
+  height: 240vh;
+  margin-top: -120vh;
+  margin-bottom: -120vh;
   position: relative;
   overflow: hidden;
 }
@@ -45,4 +45,29 @@
   color: #f4f4f4;
   font-size: 32px;
   transition: 0.4s ease-out;
+}
+
+@media screen and (max-width: 1360px) {
+  .animation-container-position {
+    height: 220vh;
+    margin-top: -110vh;
+    margin-bottom: -110vh;
+  }
+}
+@media screen and (max-width: 768px) {
+  .animation-container-position {
+    height: 260vh;
+    margin-top: -130vh;
+    margin-bottom: -130vh;
+  }
+  .animation-red-circle {
+    width: calc(var(--circle-size) * 1.75);
+    height: calc(var(--circle-size) * 1.75);
+  }
+}
+@media screen and (max-width: 600px) {
+  .animation-red-circle {
+    width: calc(var(--circle-size) * 3);
+    height: calc(var(--circle-size) * 3);
+  }
 }

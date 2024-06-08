@@ -8,7 +8,7 @@ const FlowAnimation = () => {
   const scrollPercentage = useSelector(
     (state) => state.animation.scrollPercentage
   );
-  const circleSize = (-42 + scrollPercentage) * 10;
+  const circleSize = (-40 + scrollPercentage) * 10;
 
   return (
     <div className="flow-page" id="flow-page">

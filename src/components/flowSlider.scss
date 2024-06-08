@@ -7,7 +7,7 @@
   align-content: center;
   align-items: center;
 
-  min-height: 400px;
+  min-height: 380px;
 }
 .slider-container {
   display: flex;
@@ -83,11 +83,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   font-size: 40px;
-  margin: 0 8px;
+  margin: 0px 8px;
   background-color: #f4f4f4;
   color: rgb(200, 200, 200);
   cursor: pointer;
@@ -95,6 +95,19 @@
 }
 
 .avatar.active-avatar {
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
+}
+
+@media screen and (max-width: 768px) {
+  .quote-text {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .quote-text {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2px;
+  }
 }

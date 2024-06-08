@@ -15,9 +15,16 @@
   display: flex;
   margin-left: 4vw;
   margin-right: 100px;
+  transition: 1.2s ease-out;
+
   cursor: pointer;
   & img {
     width: calc(100px + 3vw);
+  }
+  &:hover {
+    filter: brightness(30%) sepia(100%) saturate(10000%);
+    cursor: pointer;
+    width: 250px;
   }
 }
 
