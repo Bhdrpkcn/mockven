@@ -82,6 +82,7 @@ const Footer = () => {
           <FaInstagram />
           <FaLinkedin />
         </div>
+        
       </div>
       <div className="footer-links">
         {footerMenuItems.map((footerMenuItem, index) => (

@@ -24,7 +24,6 @@
   &:hover {
     filter: brightness(30%) sepia(100%) saturate(10000%);
     cursor: pointer;
-    width: 250px;
   }
 }
 
@@ -33,7 +32,6 @@
   font-size: 14px;
   font-weight: 500;
   gap: 30px;
-  margin-left: 32px;
   color: var(--text-color-light);
   transition: color 0.3s;
 }
@@ -42,10 +40,40 @@
 }
 
 .navbar-item {
-  transition: 0.3s ease;
+  transition: 0.5s ease;
   cursor: pointer;
-  &:hover {
+  &:focus {
     color: rgb(200, 0, 0);
+    .navbar-item-dropdown {
+      display: flex;
+    }
+  }
+}
+.navbar-item-dropdown {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+
+  background-color: var(--background-color-dark);
+  top: 6rem;
+  min-width: 150px;
+  color: var(--text-color-dark);
+
+  transition: opacity 0.3s 1s ease-in-out, ease-in-out;
+  z-index: 99;
+
+  .dark & {
+    background-color: var(--background-color-light);
+  }
+
+  .navbar-item-dropdown-item {
+    margin: 8px 16px;
+    &:hover {
+      color: white;
+      .dark & {
+        color: var(--text-color-light);
+      }
+    }
   }
 }
 

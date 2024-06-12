@@ -1,70 +1,123 @@
-# Getting Started with Create React App
+# Mockven Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Mockven is a clone of the software consulting and development company "Mobven". It is built to showcase my front-end web development skills. The project includes features such as responsive navigation, dynamic content rendering, and theme management. This project was initially started as part of my application for an internship at Mobven. Despite not securing the internship position, I am committed to completing what I started to further enhance my skills and demonstrate my capabilities.
 
-## Available Scripts
+## Important Points
 
-In the project directory, you can run:
+1. **Clone of Mobven Website**: This application is a clone of the "Mobven" website, demonstrating a comprehensive solution for software consulting and development.
+2. **Showcasing Skills**: The project is created to showcase my front-end web development skills.
+3. **Challenges**:
+   - **Non-Repetitive Components**: Avoiding repetitive components for better code maintainability.
+   - **Single Data Source Management**: Managing content through a centralized data source.
+   - **Animations**: Creating animations using JavaScript and CSS.
+   - **Reusable Components**: Utilizing reusable components such as cards and body sections to avoid repetitive coding.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Theme Management**:
+   - Supports dark and light modes using React Context API.
+   - Theme can be toggled across the application.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. **Routing**:
+   - Client-side routing using `react-router-dom`.
+   - Dynamic rendering of components based on URL path.
 
-### `npm test`
+3. **Layout Components**:
+   - **Navbar**: Main navigation bar with links to different sections.
+   - **Body**: Main content area that changes based on the route.
+   - **Footer**: Footer with additional links and contact information.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. **Utility Components**:
+   - **BackToTop**: Button to scroll back to the top of the page.
+   - **ScrollTracker**: Tracks scroll position to trigger animations.
 
-### `npm run build`
+5. **Pages**:
+   - **MainFlow**: Displays a welcome banner and a list of flows for the root path.
+   - **OuterFlow**: Displays journey-themed content for non-root paths.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+6. **State Management**:
+   - Uses Redux to manage state for fetching and displaying data.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+7. **Data Management**:
+   - Uses constants for managing data centrally instead of hardcoding it in components.
+   - Data is imported from a single source (`mainFlowData.js`), making it easier to manage and update.
+   - Error management is implemented to handle API fetch failures.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Benefits
 
-### `npm run eject`
+- **Ease of Maintenance**: Updating data in one place reflects throughout the application.
+- **Consistency**: Ensures data consistency across different components and pages.
+- **Scalability**: Simplifies adding or modifying data as the application grows.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Example Data Structure
+```
+javascript
+export const DATAFLOW = [
+  {
+    sectionId: "101",
+    sectionName: "DATA_SERVICE",
+    sectionTitle: "OUR SERVICES",
+    sectionMainText: "Software consulting and development for your digital success",
+    cards: [
+      {
+        id: "1001",
+        title: "Software Development",
+        text: "We've built dozens of mobile apps for the hottest industries.",
+        icon: "https://mobven.com/wp-content/uploads/2022/07/Group-257-3.svg",
+        link: "/solutions",
+      },
+      // more cards...
+    ],
+  },
+  // more sections...
+];
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+8. **Animations**:
+    ***Interactive Circle Animation***
+    - Tracks screen height and page height to calculate scroll percentage.
+    - Uses the scroll percentage value for interactive circle sizing.
+    - Manages animations using JavaScript and CSS for dynamic and engaging user experiences.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+       - **Welcome Banner Animation**
+     - Tracks mouse movement to animate elements within the welcome banner.
+     - Uses JavaScript and CSS for smooth animation transitions.
+     - Applies different speeds to elements to create a parallax effect.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   - **OuterFlow Animation**
+     - Creates a moving background effect using keyframe animations in CSS.
+     - Uses JavaScript to control the animation of elements within the SVG.
+     - Implements responsive design to adjust animations for different screen sizes.
 
-## Learn More
+## Important Parts in Front-End Web Development Coding
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **State and Props Management**: Efficient use of React's state and props to manage dynamic content and interactions.
+- **Context API**: Utilized for managing themes across the application.
+- **Routing**: Implemented with `react-router-dom` for seamless navigation.
+- **Responsive Design**: Components like `Navbar` and `MobilMenu` are designed to be responsive and handle different screen sizes.
+- **Animations**: Managed through CSS and JavaScript for interactive elements like the welcome banner and flow animations.
+- **Reusable Components**: Modular and reusable components such as `FlowContainer`, `FlowHeader`, and `FlowCard` for consistent UI patterns.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Installation and Setup Instructions
 
-### Code Splitting
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Installation:
 
-### Analyzing the Bundle Size
+`npm install`  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To Start Server:
 
-### Making a Progressive Web App
+`npm start`  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+To Visit App:
 
-### Advanced Configuration
+`localhost:3000/`  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contributing 
 
-### Deployment
+Feel free to open issues and submit pull requests for improvements and bug fixes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## License
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License.

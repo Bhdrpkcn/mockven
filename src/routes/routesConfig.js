@@ -1,7 +1,6 @@
 import React from "react";
-import TestPage1 from "../pages/TestPage1";
-import TestMainPage1 from "../pages/TestMainPage1";
 import MainFlow from "../pages/mainFlow/MainFlow";
+import OuterFlow from "../pages/outerFlow/OuterFlow";
 
 export const routes = [
   {
@@ -10,7 +9,7 @@ export const routes = [
     exact: true,
   },
   {
-    path: "/:testpage1",
-    element: <TestPage1 />,
+    path: "/:test",
+    element: <OuterFlow />,
   },
 ];
