@@ -12,4 +12,8 @@ export const routes = [
     path: "/outerflow",
     element: <OuterFlow />,
   },
+  {
+    path: "*",
+    element: <OuterFlow />,
+  },
 ];

@@ -8,7 +8,7 @@ const Body = () => {
     <div className="body">
       <Routes>
         {routes.map((route, index) => (
-          <Route key={index} {...route} />
+          <Route key={index} path={route.path} element={route.element} />
         ))}
       </Routes>
     </div>
