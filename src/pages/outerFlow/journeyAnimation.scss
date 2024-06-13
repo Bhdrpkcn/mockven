@@ -1,0 +1,99 @@
+.graphic {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: flex-start;
+  scale: 1;
+
+  margin: 4rem 4rem 0rem 0rem;
+
+  .clip-svg {
+    clip-path: url(#myClip);
+    .night {
+      height: 560px;
+      width: 700px;
+      background: url("../../assets/background.png");
+      background-size: cover;
+      position: relative;
+      overflow-x: hidden;
+
+      .surface {
+        position: absolute;
+        background: url("../../assets/tree.png");
+        height: 266px;
+        scale: 2;
+        width: 1000%;
+        display: block;
+        bottom: 0px;
+        left: 0px;
+        background-repeat: repeat-x;
+      }
+      .moveRight {
+        animation: moveRight 15s linear infinite;
+      }
+      .car {
+        position: absolute;
+        bottom: -53px;
+        left: 1%;
+        scale: 0.5;
+      }
+
+      .suspension {
+        animation: suspension 1.2s linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes moveRight {
+  100% {
+    transform: translateX(-2950px);
+  }
+}
+
+@keyframes suspension {
+  100% {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+  0% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Responsive */
+@media only screen and (min-width: 901px) {
+  .graphic {
+    scale: 1;
+    margin: 0rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .graphic {
+    scale: 1;
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .graphic {
+    scale: 0.8;
+    margin: -4rem -5rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .graphic {
+    scale: 0.6;
+    margin: -7rem -9rem;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  .graphic {
+    scale: 0.8;
+    right: -116%;
+    top: -10%;
+  }
+}

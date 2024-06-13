@@ -1,4 +1,5 @@
 import React from "react";
+import contact_image from "../../assets/DSCF9972.jpg";
 import {
   FaTwitter,
   FaInstagram,
@@ -41,10 +42,7 @@ const Footer = () => {
     <div className="footer">
       <div className="footer-connect">
         <div className="footer-background-image">
-          <img
-            src="https://mobven.com/wp-content/uploads/2022/06/DSCF9972-scaled.jpg"
-            alt="footer-img"
-          />
+          <img src={contact_image} alt="footer-img" />
         </div>
         <div className="footer-connect-left">
           <div className="footer-connect-title">LET'S CONNECT</div>
@@ -82,7 +80,6 @@ const Footer = () => {
           <FaInstagram />
           <FaLinkedin />
         </div>
-        
       </div>
       <div className="footer-links">
         {footerMenuItems.map((footerMenuItem, index) => (

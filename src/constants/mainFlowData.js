@@ -1,3 +1,5 @@
+import experience_image from "../assets/DSCF9986.jpg";
+
 export const DATAFLOW = [
   {
     sectionId: "101",
@@ -77,8 +79,7 @@ export const DATAFLOW = [
         subTextData: 50,
       },
     ],
-    sectionImage:
-      "https://mobven.com/wp-content/uploads/2022/06/DSCF9986-scaled.jpg",
+    sectionImage: experience_image,
     cardType: null,
   },
   {

@@ -74,6 +74,7 @@ export const DATAFLOW = [
 ```
 
 8. **Animations**:
+
     ***Interactive Circle Animation***
     - Tracks screen height and page height to calculate scroll percentage.
     - Uses the scroll percentage value for interactive circle sizing.

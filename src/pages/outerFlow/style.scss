@@ -1,196 +1,182 @@
-.wrapper {
+.outerFlow-container {
   display: flex;
-  height: 96vh;
-  width: 95vw;
+  flex-direction: column;
+  height: calc(100vh - 2rem);
+  width: calc(100vw - 2rem);
   max-width: 1400px;
   margin: 1rem auto;
-  /* 069 Purple Division */
+  overflow: hidden;
+
   background-image: linear-gradient(
     155deg,
-    rgb(97, 178, 195) 3.6%,
-    rgb(27, 18, 36) 77.6%
+    rgb(145, 187, 196) 3.6%,
+    rgb(28, 38, 53) 77.6%
   );
+  // background-image: linear-gradient(
+  //   155deg,
+  //   rgb(97, 178, 195) 3.6%,
+  //   rgb(1, 13, 32) 77.6%
+  // );
 
-  /* background-image: linear-gradient(
-    180.4deg,
-    rgba(188, 120, 236, 1) -2.2%,
-    rgba(29, 133, 163, 1) 83.5%
-  ); */
-  box-shadow: 1px 3px 20px rgba(0, 0, 0, 0.6);
-  border-radius: 1rem;
-  position: relative;
+  box-shadow: 2px 3px 20px rgba(0, 0, 0, 1);
+  border-radius: 2rem;
 }
 
-.mobile-view {
-  position: absolute;
-  top: 0%;
-  display: none;
-  img {
-    width: 100%;
-  }
+.journey-animation-container {
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1;
+  height: 65%;
 }
 
 .container {
   display: flex;
   flex-direction: row;
-  overflow: hidden;
+}
 
-  .outer-message {
-    width: 90%;
-    height: 20%;
-    text-align: center;
-    padding: 2rem 2rem;
-    margin: 6rem 0;
-    z-index: 99;
-    h1 {
-      font-size: 3em;
-      color: aliceblue;
-    }
-    p {
-      color: #ececf0bd;
-    }
+.outer-message {
+  display: flex;
+  justify-content: center;
+
+  flex-direction: column;
+  z-index: 2;
+  padding: 2rem;
+
+  .outer-message-title {
+    display: flex;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: white;
+  }
+  .outer-message-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 200;
+    letter-spacing: 1.5px;
+    color: white;
+
     .outer-message-button {
       display: flex;
-      color: black;
-      width: 180px;
-      font-size: 1rem;
-      padding: 0.8rem 2.3rem;
-      margin: 0 0.1rem;
-      border: 0;
-      border-radius: 3rem;
-      background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 2rem;
+      margin: 2rem 0rem;
+      max-width: 220px;
+      border: none;
+      border-radius: 2rem;
+      color: rgb(30, 30, 30);
+      background-color: rgba(255, 255, 255, 0.4);
       cursor: pointer;
-    }
-  }
-
-  .graphic {
-    .clip-svg {
-      clip-path: url(#myClip);
-
-      .night {
-        height: 560px;
-        width: 700px;
-        background: url("../../assets/background.png");
-        background-size: cover;
-        position: relative;
-        overflow-x: hidden;
-
-        .surface {
-          height: 140px;
-          width: 500%;
-          display: block;
-          background: url("../../assets/tree.png");
-          position: absolute;
-          bottom: 0px;
-          left: 0px;
-          background-repeat: repeat-x;
-        }
-        .moveRight {
-          animation: moveRight 6s linear infinite;
-        }
-        .car {
-          position: absolute;
-          bottom: -319px;
-          left: -65%;
-          scale: 0.2;
-        }
-
-        .suspension {
-          animation: suspension 1s linear infinite;
-        }
+      transition: 0.2s ease;
+      &:hover {
+        color: rgb(70, 70, 70);
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
       }
     }
   }
 }
 
-@keyframes moveRight {
-  100% {
-    transform: translateX(-2950px);
-  }
-}
+@media only screen and (max-height: 600px) {
+  .outerFlow-container {
+    display: flex;
 
-@keyframes suspension {
-  100% {
-    transform: translateY(-3px);
-  }
-  50% {
-    transform: translateY(4px);
-  }
-  0% {
-    transform: translateY(-3px);
-  }
-}
-
-/* Responsive */
-@media only screen and (max-width: 1070px) {
-  .container {
-    .outer-message {
+    .journey-animation-container {
       display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 60%;
-      width: 60%;
-      padding: 0rem 0rem;
-      margin: 0rem 2rem;
-      z-index: 99;
-      h1 {
-        display: flex;
-        font-size: 2.5em;
-      }
-      p {
-        display: flex;
-        font-weight: 400;
-      }
-      .outer-message-button {
-        margin: 0rem auto;
-        justify-content: center;
-      }
+      width: 50%;
     }
-    .graphic {
-      position: absolute;
-      right: -35px;
-      top: -53px;
-      scale: 0.9;
+    .container {
+      display: flex;
+      position: relative;
+      width: 30%;
+      top: -40%;
+      height: 100px;
+      padding-bottom: 10rem;
     }
   }
 }
 
-@media only screen and (max-width: 678px) {
+@media only screen and (min-width: 901px) {
   .container {
-    .outer-message {
-      top: 50%;
-      width: 70%;
-      z-index: 99;
-      h1 {
-        display: flex;
-        font-size: 2.5em;
-      }
-      p {
-        display: flex;
-        text-align: left;
-        font-weight: 400;
-      }
+    display: flex;
+    position: relative;
+    width: 100%;
+    margin-top: -8rem;
+  }
+  .outer-message {
+    .outer-message-title {
+      margin-top: -4rem;
+      max-width: 300px;
+      font-size: 50px;
+    }
+    .outer-message-text {
+      letter-spacing: 1.2px;
+      margin-top: 4rem;
+
       .outer-message-button {
-        justify-content: center;
+        margin: 2rem 0rem;
       }
     }
-    .graphic {
-      display: none;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .journey-animation-container {
+    height: 70%;
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  .outer-message {
+    .outer-message-title {
+      margin-top: -2rem;
+
+      justify-content: center;
+      font-size: 28px;
+    }
+    .outer-message-text {
+      align-items: center;
+      text-align: center;
+      letter-spacing: 1.2px;
+      margin-top: 0.5rem;
+      font-size: 11px;
+      .outer-message-button {
+        margin: 1rem 0rem;
+      }
     }
   }
 }
 
-@media only screen and (max-width: 678px) {
-  .mobile-view {
-    display: block;
+@media only screen and (max-width: 700px) {
+  .journey-animation-container {
+    height: 60%;
+  }
+
+  .container {
+    height: 40%;
+  }
+  .outer-message {
+    .outer-message-title {
+      margin-top: -4rem;
+
+      justify-content: center;
+      font-size: 28px;
+    }
+    .outer-message-text {
+      align-items: center;
+      text-align: center;
+      letter-spacing: 1.2px;
+      margin-top: 0.5rem;
+      font-size: 12px;
+      .outer-message-button {
+        margin: 2rem 0rem;
+      }
+    }
   }
 }
 
 @media only screen and (max-width: 402px) {
-  .mobile-view {
-    display: none;
-  }
-  .container .title {
-    margin: 0;
-  }
 }
