@@ -99,6 +99,11 @@ export const DATAFLOW = [
 - **Animations**: Managed through CSS and JavaScript for interactive elements like the welcome banner and flow animations.
 - **Reusable Components**: Modular and reusable components such as `FlowContainer`, `FlowHeader`, and `FlowCard` for consistent UI patterns.
 
+## Review
+
+![Here is the Review of app](./assets/review.gif)
+
+
 ## Installation and Setup Instructions
 
 Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
