@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/mockven/static/css/main.0787d7ad.css",
+    "main.js": "/mockven/static/js/main.ea1f8c3c.js",
+    "static/media/DSCF9972.jpg": "/mockven/static/media/DSCF9972.05f9b6ef7cc9c8f3aa34.jpg",
+    "static/media/DSCF9986.jpg": "/mockven/static/media/DSCF9986.fe8473bfb370164a0a76.jpg",
+    "static/media/vehicleHarley.png": "/mockven/static/media/vehicleHarley.8939cd545808cfb384e2.png",
+    "static/media/background.png": "/mockven/static/media/background.c11f72d3855ab0755332.png",
+    "static/media/tree.png": "/mockven/static/media/tree.213af253a22b58013a6c.png",
+    "index.html": "/mockven/index.html",
+    "main.0787d7ad.css.map": "/mockven/static/css/main.0787d7ad.css.map",
+    "main.ea1f8c3c.js.map": "/mockven/static/js/main.ea1f8c3c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0787d7ad.css",
+    "static/js/main.ea1f8c3c.js"
+  ]
+}
