@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import "./welcomeBanner.scss";
 
 const WelcomeBanner = () => {
@@ -39,16 +39,13 @@ const WelcomeBanner = () => {
     });
   }, []);
 
-  const animate = () => {
+  const animate = useCallback(() => {
     const { x, y, vx, vy } = positionRef.current;
     const dx = (mouseX - x) * 0.02;
     const dy = (mouseY - y) * 0.02;
 
-    positionRef.current.vx += dx;
-    positionRef.current.vy += dy;
-
-    positionRef.current.vx *= 0.5;
-    positionRef.current.vy *= 0.5;
+    positionRef.current.vx = vx * 0.5 + dx;
+    positionRef.current.vy = vy * 0.5 + dy;
 
     positionRef.current.x += positionRef.current.vx;
     positionRef.current.y += positionRef.current.vy;
@@ -68,12 +65,12 @@ const WelcomeBanner = () => {
     });
 
     requestRef.current = requestAnimationFrame(animate);
-  };
+  }, [mouseX, mouseY]);
 
   useEffect(() => {
     requestRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(requestRef.current);
-  }, [mouseX, mouseY]);
+  }, [animate]);
 
   return (
     <div className="welcome-banner" ref={bannerRef}>
@@ -81,8 +78,8 @@ const WelcomeBanner = () => {
         <div className="banner-message-title">We bring the Magic.</div>
         <div className="banner-message-body">
           This is a cloneApp for a software company that provides 360-degree
-          services from strategy to development to build delightfull software
-          solutions that make their customers succesful.
+          services from strategy to development to build delightful software
+          solutions that make their customers successful.
         </div>
         <div
           className="banner-message-link"
