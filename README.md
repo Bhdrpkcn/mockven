@@ -2,6 +2,12 @@
 
 Mockven is a clone of the software consulting and development company "Mobven". It is built to showcase my front-end web development skills. The project includes features such as responsive navigation, dynamic content rendering, and theme management. This project was initially started as part of my application for an internship at Mobven. Despite not securing the internship position, I am committed to completing what I started to further enhance my skills and demonstrate my capabilities.
 
+## Review
+
+![Here is the Review of app](./assets/review.gif)
+
+
+
 ## Important Points
 
 1. **Clone of Mobven Website**: This application is a clone of the "Mobven" website, demonstrating a comprehensive solution for software consulting and development.
@@ -98,10 +104,6 @@ export const DATAFLOW = [
 - **Responsive Design**: Components like `Navbar` and `MobilMenu` are designed to be responsive and handle different screen sizes.
 - **Animations**: Managed through CSS and JavaScript for interactive elements like the welcome banner and flow animations.
 - **Reusable Components**: Modular and reusable components such as `FlowContainer`, `FlowHeader`, and `FlowCard` for consistent UI patterns.
-
-## Review
-
-![Here is the Review of app](./assets/review.gif)
 
 
 ## Installation and Setup Instructions
