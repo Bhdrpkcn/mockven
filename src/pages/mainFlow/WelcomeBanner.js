@@ -84,7 +84,12 @@ const WelcomeBanner = () => {
           services from strategy to development to build delightfull software
           solutions that make their customers succesful.
         </div>
-        <div className="banner-message-link">Discover More</div>
+        <div
+          className="banner-message-link"
+          onClick={() => (window.location.href = "/outerflow")}
+        >
+          Discover More
+        </div>
       </div>
       <div className="motion">
         <div className="motion-object-group">

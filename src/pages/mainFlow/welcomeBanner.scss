@@ -20,6 +20,9 @@
   height: 100%;
   width: 140%;
   top: 0px;
+  img {
+    pointer-events: none;
+  }
 }
 
 .motion-object-statue {

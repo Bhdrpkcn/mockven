@@ -9,7 +9,11 @@ export const FlowCard = ({ item }) => {
       {item.cards && (
         <div className="cards-list">
           {item.cards.map((card) => (
-            <div className={`cards-list-card ${item.cardType}`} key={card.id}>
+            <div
+              className={`cards-list-card ${item.cardType}`}
+              key={card.id}
+              onClick={() => (window.location.href = "/outerflow")}
+            >
               {card.icon && (
                 <>
                   <img className="card-icon" src={card.icon} alt={card.title} />

@@ -101,24 +101,56 @@
   flex-direction: row;
   position: fixed;
   align-items: center;
-
   background-color: var(--background-color-dark);
-
   z-index: 999;
   top: 0;
   left: 0;
   height: 100%;
-
   width: 100%;
   gap: 1.5rem;
-
-  transition: transform 0.6s ease-in-out;
+  transition: transform 1s ease-in-out;
   transform: translateY(-100vh);
   &.responsiveHeader {
     transform: translateY(0);
   }
   .dark & {
     background-color: var(--background-color-light);
+  }
+
+  &.closing {
+    .navbar-open-left,
+    .navbar-open-right {
+      animation: fadeOut 0.8s ease forwards;
+    }
+  }
+
+  .navbar-open-left,
+  .navbar-open-right {
+    animation: fadeIn 3s ease;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -130,11 +162,9 @@
   width: calc(60% - 32px);
   margin-left: 32px;
   color: var(--text-color-dark);
-
   .dark & {
     color: var(--text-color-light);
   }
-
   .navbar-open-left-footer {
     display: flex;
     flex-direction: row;
@@ -150,10 +180,8 @@
       }
     }
   }
-
   .navbar-open-left-logo {
     cursor: pointer;
-
     .logo-name {
       font-size: 24px;
       font-weight: 500;
@@ -163,7 +191,6 @@
         color: #002b90;
       }
     }
-
     .logo-motto {
       font-size: 10px;
       font-weight: 100;
@@ -201,27 +228,22 @@
   height: 100%;
   width: 40%;
   background-color: #2c313d;
-
   .dark & {
     background-color: #dddddd;
   }
-
   .navbar-close-button {
     display: flex;
     align-items: center;
     position: absolute;
     right: 32px;
     top: 48px;
-
     font-size: 15px;
     font-weight: 100;
     color: gray;
     .dark & {
       color: #2c313d;
     }
-
     cursor: pointer;
-
     .navbar-close-button-icon {
       font-size: 40px;
       color: white;
@@ -235,7 +257,6 @@
     }
   }
 }
-
 .navbar-buttons {
   display: flex;
   position: absolute;

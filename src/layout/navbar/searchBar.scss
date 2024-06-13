@@ -50,10 +50,10 @@
 
       .searchBar-close-button-icon {
         font-size: 40px;
-        color: white;
+        color: #2c313d;
         transition: transform 0.6s ease-in-out;
         .dark & {
-          color: #2c313d;
+          color: white;
         }
       }
       .searchBar-close-button-icon:hover {
@@ -65,9 +65,114 @@
 
 .searchBar-search {
   display: flex;
-  width: 100vw;
-  padding: 6rem 1rem;
+  flex-direction: column;
+  margin: 6rem 3rem;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
+  overflow: hidden;
+
+  form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    input {
+      width: 100%;
+      font-size: 20px;
+      letter-spacing: 2px;
+      border: none;
+      outline: 0;
+      animation: fadeIn 1.2s ease;
+
+      .closing & {
+        animation: fadeOut 1.2s ease;
+      }
+      background: none;
+
+      &::after {
+        color: red;
+        border: none;
+      }
+    }
+
+    button {
+      border: none;
+      background: none;
+      font-size: 32px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      animation: fadeIn 2.8s ease;
+
+      .closing & {
+        animation: fadeOut 2.8s ease;
+      }
+
+      &:hover {
+        color: gray;
+      }
+    }
+  }
+  .divider {
+    display: flex;
+    margin-top: 0.5rem;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    animation: moveRightFadeIn 1.7s ease-in-out;
+
+    .closing & {
+      animation: moveLeftFadeOut 1.7s ease-in-out;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes moveRightFadeIn {
+  0% {
+    scale: 0.1;
+    opacity: 0;
+    transform: translateX(-2000px);
+  }
+
+  100% {
+    scale: 1;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveLeftFadeOut {
+  0% {
+    scale: 1;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    scale: 0.1;
+    opacity: 0;
+    transform: translateX(-2000px);
+  }
 }

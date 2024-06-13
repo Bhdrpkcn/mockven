@@ -1,3 +1,5 @@
+// ## IN PROGRESS ##
+
 export const calculateCumulativeHeight = (element) => {
   let offset = 0;
   let prevElement = element.previousElementSibling;

@@ -9,7 +9,7 @@ export const routes = [
     exact: true,
   },
   {
-    path: "/:test",
+    path: "/outerflow",
     element: <OuterFlow />,
   },
 ];

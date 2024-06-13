@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import FlowContainer from "./FlowContainer";
 import FlowAnimation from "./FlowAnimation";
 import fetchData from "../../store/api/fetchApi";
+import { LoadingBar } from "../../components/LoadingBar";
 
 const FlowList = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ const FlowList = () => {
     dispatch(fetchData());
   }, [dispatch]);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <LoadingBar />;
   if (error) return <div>Error: {error}</div>;
 
   const renderFlowList = () => {

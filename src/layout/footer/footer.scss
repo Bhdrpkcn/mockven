@@ -27,6 +27,8 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    pointer-events: none;
+
     z-index: 1;
     filter: brightness(0.4);
   }
@@ -177,6 +179,10 @@
       width: 15vw;
       margin-top: 1rem;
       color: var(--text-color-dark);
+      cursor: pointer;
+      &:hover {
+        color: red;
+      }
     }
   }
 }

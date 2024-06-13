@@ -20,27 +20,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* look below if needed ! */
-
-.ant-btn-primary {
-  background-color: #ef4444;
-}
-
-.ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover {
-  background: linear-gradient(20deg, #fa0a66, #ef4444 80%);
-  color: #fff;
-}
-
-.filter-container::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;
-}
-
-.ant-btn-default {
-  font-size: 14px;
-}
-.ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
-  color: #ccdde1;
-  font-size: 13px;
-  border-width: 1.5px;
-  border-color: #ff898d;
 }

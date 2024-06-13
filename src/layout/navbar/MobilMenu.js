@@ -1,5 +1,4 @@
-import React, { useRef, useState } from "react";
-import { useTheme } from "../../utils/ThemeContext";
+import React, { useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import {
   FaTwitter,
@@ -23,13 +22,25 @@ export const MobilMenu = ({
   theme,
 }) => {
   const [expanded, setExpanded] = useState(false);
-  const [hoveredItem, setHoveredItem] = useState(null);
+  const [isClosing, setIsClosing] = useState(false);
+
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
 
+  const handleCloseMenuBar = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsClosing(false);
+      closeMenuBar();
+    }, 1200);
+  };
+
   return (
-    <div className="navbar-open" ref={headRef}>
+    <div
+      className={`navbar-open ${isClosing ? "closing" : ""}` /**CHANGED */}
+      ref={headRef}
+    >
       <div className="navbar-open-left">
         <div className="navbar-open-left-logo">
           <div
@@ -106,7 +117,10 @@ export const MobilMenu = ({
       </div>
 
       <div className="navbar-open-right">
-        <div className="navbar-close-button" onClick={closeMenuBar}>
+        <div
+          className="navbar-close-button"
+          onClick={handleCloseMenuBar} /**CHANGED */
+        >
           Close
           <IoCloseOutline className="navbar-close-button-icon" />
         </div>

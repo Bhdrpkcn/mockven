@@ -1,5 +1,3 @@
-// App.js
-
 import React from "react";
 import { useLocation } from "react-router-dom";
 import "./App.scss";
@@ -9,12 +7,14 @@ import { ThemeProvider, useTheme } from "./utils/ThemeContext";
 import Footer from "./layout/footer/Footer";
 import BackToTop from "./utils/BackToTop";
 import OuterFlow from "./pages/outerFlow/OuterFlow";
+import { useSelector } from "react-redux";
 
 function AppContent() {
   const { theme } = useTheme();
   const location = useLocation();
 
   const isOuterFlow = location.pathname !== "/";
+  const loading = useSelector((state) => state.api.loading);
 
   return (
     <div className={`App ${theme}`}>
@@ -27,7 +27,7 @@ function AppContent() {
           <Navbar />
           <BackToTop />
           <Body />
-          <Footer />
+          {!loading && <Footer />}
         </>
       )}
     </div>

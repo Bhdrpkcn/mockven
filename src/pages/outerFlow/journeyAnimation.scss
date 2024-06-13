@@ -9,13 +9,14 @@
 
   .clip-svg {
     clip-path: url(#myClip);
+
     .night {
       height: 560px;
       width: 700px;
       background: url("../../assets/background.png");
       background-size: cover;
       position: relative;
-      overflow-x: hidden;
+      overflow: hidden;
 
       .surface {
         position: absolute;
@@ -29,12 +30,12 @@
         background-repeat: repeat-x;
       }
       .moveRight {
-        animation: moveRight 15s linear infinite;
+        animation: moveRight 12s linear infinite;
       }
       .car {
         position: absolute;
-        bottom: -53px;
-        left: 1%;
+        bottom: -90px;
+        left: -8%;
         scale: 0.5;
       }
 

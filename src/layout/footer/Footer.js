@@ -8,6 +8,11 @@ import {
 } from "react-icons/fa";
 import "./footer.scss";
 
+const footerConnectText =
+  "Mobven provides more than simply staffing; when we work as part of your team, we give actual project management and technical experience. We won't simply be a helping hand—we'll help you plan your strategy, implement best practices to ensure long-term success, and assist your team advance. To schedule a complimentary session to discuss your concept, project, or goals, please contact us.";
+const footerContactText =
+  "Our aim is to expand & use technology in such a way that it inspires and enables individuals and organizations to reach their full potential.";
+
 const footerMenuItems = [
   {
     name: "Company",
@@ -49,15 +54,13 @@ const Footer = () => {
           <div className="footer-connect-subTitle">We'd Love to Talk</div>
         </div>
         <div className="footer-connect-right">
-          <div className="footer-connect-text">
-            Mobven provides more than simply staffing; when we work as part of
-            your team, we give actual project management and technical
-            experience. We won't simply be a helping hand—we'll help you plan
-            your strategy, implement best practices to ensure long-term success,
-            and assist your team advance. To schedule a complimentary session to
-            discuss your concept, project, or goals, please contact us.
-          </div>
-          <button className="footer-connect-button">Contact Us</button>
+          <div className="footer-connect-text">{footerConnectText}</div>
+          <button
+            className="footer-connect-button"
+            onClick={() => (window.location.href = "/connect")}
+          >
+            Contact Us
+          </button>
         </div>
       </div>
       <div className="footer-contact">
@@ -68,12 +71,13 @@ const Footer = () => {
             onClick={() => (window.location.href = "/")}
           />
         </div>
-        <div className="footer-contact-text">
-          Our aim is to expand & use technology in such a way that it inspires
-          and enables individuals and organizations to reach their full
-          potential.
-        </div>
-        <button className="footer-contact-button">Contact Us</button>
+        <div className="footer-contact-text">{footerContactText}</div>
+        <button
+          className="footer-contact-button"
+          onClick={() => (window.location.href = "/contact")}
+        >
+          Contact Us
+        </button>
         <div className="footer-contact-socials">
           <FaFacebookF />
           <FaTwitter />
@@ -86,7 +90,11 @@ const Footer = () => {
           <div key={index} className="footer-links-item">
             <div className="footer-links-main">{footerMenuItem.name}</div>
             {footerMenuItem.extraItems.map((extraItem, idx) => (
-              <div key={idx} className="footer-links-extraItem">
+              <div
+                key={idx}
+                className="footer-links-extraItem"
+                onClick={() => (window.location.href = "/outerFlow")}
+              >
                 {extraItem}
               </div>
             ))}

@@ -9,10 +9,10 @@ const ScrollTracker = () => {
   const dispatch = useDispatch();
 
   const handleScroll = () => {
-    const scrollY = window.scrollY; //vertical scroll value
-    const documentHeight = document.documentElement.scrollHeight; //total document height
+    const scrollY = window.scrollY;
+    const documentHeight = document.documentElement.scrollHeight;
 
-    const windowHeight = window.innerHeight; //current window Height
+    const windowHeight = window.innerHeight;
     const scrollPercentage = Math.trunc(
       (scrollY / (documentHeight - windowHeight)) * 100
     );
